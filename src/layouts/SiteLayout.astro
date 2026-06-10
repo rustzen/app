@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Rustzen',
+  description = 'Local-first productivity tools for macOS.',
+} = Astro.props;
+
+const navItems = [
+  { href: '/zen-clear', label: 'Zen Clear' },
+  { href: '/clipboard', label: 'Clipboard' },
+  { href: '/blog', label: 'Blog' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand" aria-label="Rustzen home">
+        <img class="brand-mark" src="/github-icon.svg" alt="" width="32" height="32" />
+        <span class="brand-word">Rustzen</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={{ active: Astro.url.pathname === item.href }}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <p>Rustzen builds Zen Clear and Clipboard for local-first macOS workflows.</p>
+      <a href="/blog">Read the blog</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getAllPosts } from '../../utils/posts';
+
+const posts = await getAllPosts();
+---
+
+<SiteLayout
+  title="Blog | Rustzen"
+  description="Articles and notes from the Rustzen ecosystem."
+>
+  <main class="blog-page">
+    <header class="blog-header reveal">
+      <p class="eyebrow">Blog</p>
+      <h1>Notes, guides, and build records.</h1>
+      <p>{posts.length} articles from idaibin/blog, shown as one unclassified stream.</p>
+    </header>
+
+    <section class="waterfall" aria-label="Blog posts">
+      {
+        posts.map((post, index) => (
+          <a href={`/blog/${post.id}`} class="post-tile" style={`--offset:${index % 5}`}>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </time>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            {post.data.tags.length > 0 && (
+              <div class="tags">
+                {post.data.tags.slice(0, 5).map((tag) => <span>{tag}</span>)}
+              </div>
+            )}
+          </a>
+        ))
+      }
+    </section>
+  </main>
+</SiteLayout>
+
+<style>
+  .blog-page {
+    padding: clamp(54px, 8vw, 112px) clamp(20px, 5vw, 72px);
+  }
+
+  .blog-header {
+    max-width: 900px;
+    margin-bottom: clamp(36px, 7vw, 72px);
+  }
+
+  .blog-header h1 {
+    max-width: 10ch;
+    margin: 0;
+    color: var(--charcoal);
+    font-size: clamp(4rem, 10vw, 8.5rem);
+    line-height: 0.9;
+  }
+
+  .blog-header p:last-child {
+    max-width: 580px;
+    margin: 24px 0 0;
+    color: var(--muted);
+    font-size: 1.18rem;
+  }
+
+  .waterfall {
+    columns: 3 300px;
+    column-gap: 18px;
+  }
+
+  .post-tile {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 18px;
+    padding: calc(22px + var(--offset) * 5px) 24px 24px;
+    break-inside: avoid;
+    color: var(--charcoal);
+    background: var(--surface);
+    border: 1px solid rgb(17 19 22 / 0.1);
+    border-radius: 8px;
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .post-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgb(184 102 50 / 0.44);
+    box-shadow: 0 18px 48px rgb(17 19 22 / 0.12);
+  }
+
+  .post-tile time {
+    color: var(--copper);
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+
+  .post-tile h2 {
+    margin: 14px 0 12px;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .post-tile p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .tags span {
+    padding: 5px 8px;
+    color: var(--blue);
+    background: rgb(38 95 130 / 0.08);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+</style>

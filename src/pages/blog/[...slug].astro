@@ -1,0 +1,159 @@
+---
+import { render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { getAllPosts } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<SiteLayout title={`${post.data.title} | Rustzen`} description={post.data.description}>
+  <main class="post-page">
+    <article>
+      <header class="post-header">
+        <a href="/blog" class="back-link">Back to blog</a>
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('en', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        <h1>{post.data.title}</h1>
+        <p>{post.data.description}</p>
+      </header>
+      <div class="content">
+        <Content />
+      </div>
+    </article>
+  </main>
+</SiteLayout>
+
+<style>
+  .post-page {
+    padding: clamp(42px, 7vw, 86px) clamp(20px, 5vw, 72px);
+  }
+
+  article {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .post-header {
+    padding-bottom: 36px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid rgb(17 19 22 / 0.14);
+  }
+
+  .back-link {
+    display: inline-flex;
+    margin-bottom: 26px;
+    color: var(--blue);
+    font-weight: 700;
+  }
+
+  time {
+    display: block;
+    color: var(--copper);
+    font-weight: 700;
+  }
+
+  h1 {
+    margin: 18px 0;
+    color: var(--charcoal);
+    font-size: clamp(2.7rem, 7vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+  }
+
+  .post-header p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.2rem;
+  }
+
+  .content {
+    color: #23282e;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .content :global(h2) {
+    margin: 2.2em 0 0.7em;
+    color: var(--charcoal);
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .content :global(h3) {
+    margin: 1.8em 0 0.55em;
+    color: var(--charcoal);
+    font-size: 1.45rem;
+  }
+
+  .content :global(p),
+  .content :global(ul),
+  .content :global(ol),
+  .content :global(blockquote),
+  .content :global(table),
+  .content :global(pre) {
+    margin: 0 0 1.15em;
+  }
+
+  .content :global(a) {
+    color: var(--blue);
+    border-bottom: 1px solid rgb(38 95 130 / 0.35);
+  }
+
+  .content :global(pre) {
+    overflow-x: auto;
+    padding: 18px;
+    color: #f8f6f1;
+    background: #181d22;
+    border-radius: 8px;
+  }
+
+  .content :global(code) {
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      monospace;
+  }
+
+  .content :global(:not(pre) > code) {
+    padding: 0.16em 0.32em;
+    background: rgb(17 19 22 / 0.08);
+    border-radius: 4px;
+  }
+
+  .content :global(blockquote) {
+    padding-left: 18px;
+    color: var(--muted);
+    border-left: 3px solid var(--copper);
+  }
+
+  .content :global(table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  .content :global(th),
+  .content :global(td) {
+    padding: 10px 12px;
+    border: 1px solid rgb(17 19 22 / 0.14);
+  }
+
+  .content :global(img) {
+    border-radius: 8px;
+  }
+</style>

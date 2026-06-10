@@ -1,0 +1,213 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { tools, getTool, type ToolCode } from '../data/tools';
+
+export function getStaticPaths() {
+  return tools.map((tool) => ({
+    params: { code: tool.code },
+  }));
+}
+
+const { code } = Astro.params;
+const tool = getTool(code as ToolCode);
+
+if (!tool) {
+  return Astro.redirect('/');
+}
+
+const siblingTools = tools.filter((item) => item.code !== tool.code);
+---
+
+<SiteLayout title={`${tool.name} | Rustzen`} description={tool.description}>
+  <main class={`tool-page ${tool.accent}`}>
+    <section class="product-hero">
+      <div class="product-copy reveal">
+        <p class="eyebrow">{tool.eyebrow}</p>
+        <h1>{tool.name}</h1>
+        <p>{tool.description}</p>
+      </div>
+      <div class="product-device reveal" aria-hidden="true">
+        <div class="window-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="device-lines">
+          {tool.highlights.map((item) => <p>{item}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <h2>What this tool is built to do.</h2>
+      </div>
+      <ul>
+        {tool.highlights.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="proof-section">
+      <p>{tool.proof}</p>
+      {
+        siblingTools.map((item) => (
+          <a class="button secondary" href={item.href}>
+            View {item.name}
+          </a>
+        ))
+      }
+    </section>
+  </main>
+</SiteLayout>
+
+<style>
+  .tool-page.clear {
+    --page-accent: var(--clear-blue-deep);
+    --page-accent-2: var(--clear-blue-mid);
+    --page-panel: var(--clear-panel);
+    --page-soft: rgb(211 231 253 / 0.72);
+  }
+
+  .tool-page.clipboard {
+    --page-accent: var(--clipboard-teal);
+    --page-accent-2: var(--clipboard-gold);
+    --page-panel: var(--paper);
+    --page-soft: rgb(219 236 225 / 0.78);
+  }
+
+  .product-hero {
+    display: grid;
+    min-height: calc(100svh - 67px);
+    grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.75fr);
+    gap: clamp(32px, 7vw, 92px);
+    align-items: center;
+    padding: clamp(54px, 9vw, 128px) clamp(20px, 5vw, 72px);
+    color: var(--charcoal);
+    background:
+      radial-gradient(circle at 78% 24%, var(--page-soft), transparent 36%),
+      linear-gradient(135deg, #ffffff 0%, var(--page-panel) 58%, var(--paper) 100%);
+  }
+
+  .product-copy h1 {
+    max-width: 9ch;
+    margin: 0;
+    font-size: clamp(4rem, 10vw, 8.4rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .product-copy > p:not(.eyebrow) {
+    max-width: 680px;
+    margin: 28px 0 0;
+    color: var(--muted);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+  }
+
+  .product-device {
+    border: 1px solid color-mix(in srgb, var(--page-accent) 28%, white);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgb(255 255 255 / 0.74);
+    box-shadow:
+      0 30px 90px color-mix(in srgb, var(--page-accent) 24%, transparent),
+      0 1px 0 rgb(255 255 255 / 0.85) inset;
+    backdrop-filter: blur(18px);
+  }
+
+  .window-bar {
+    display: flex;
+    gap: 8px;
+    padding: 16px;
+    border-bottom: 1px solid color-mix(in srgb, var(--page-accent) 22%, white);
+  }
+
+  .window-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--page-accent-2);
+  }
+
+  .window-bar span:first-child {
+    background: var(--page-accent);
+  }
+
+  .window-bar span:last-child {
+    background: var(--page-soft);
+  }
+
+  .device-lines {
+    padding: 18px;
+  }
+
+  .device-lines p {
+    margin: 0;
+    padding: 18px 0;
+    color: var(--charcoal);
+    border-bottom: 1px solid rgb(100 112 134 / 0.16);
+  }
+
+  .device-lines p:last-child {
+    border-bottom: 0;
+  }
+
+  .product-detail {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+    gap: clamp(28px, 6vw, 82px);
+    padding: clamp(64px, 10vw, 124px) clamp(20px, 5vw, 72px);
+    background: rgb(255 255 255 / 0.74);
+  }
+
+  .product-detail h2 {
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 4.4rem);
+    line-height: 1;
+  }
+
+  .product-detail ul {
+    display: grid;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: rgb(100 112 134 / 0.16);
+  }
+
+  .product-detail li {
+    padding: 22px 0;
+    color: var(--charcoal);
+    background: rgb(255 255 255 / 0.88);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+  }
+
+  .proof-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: clamp(42px, 7vw, 78px) clamp(20px, 5vw, 72px);
+    background: var(--page-panel);
+  }
+
+  .proof-section p {
+    max-width: 760px;
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+  }
+
+  @media (max-width: 900px) {
+    .product-hero,
+    .product-detail {
+      grid-template-columns: 1fr;
+    }
+
+    .proof-section {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

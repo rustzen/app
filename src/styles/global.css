@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url('/fonts/atkinson-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #1d2734;
+  --muted: #647086;
+  --faint: #dde6f4;
+  --paper: #f9f8f2;
+  --surface: #ffffff;
+  --charcoal: #203042;
+  --clear-blue-deep: #77a8f7;
+  --clear-blue-mid: #a8cbfb;
+  --clear-blue-highlight: #d3e7fd;
+  --clear-panel: #eef4fe;
+  --clipboard-teal: #0f766e;
+  --clipboard-sage: #dbece1;
+  --clipboard-gold: #d5ad4f;
+  --accent: var(--clipboard-teal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    linear-gradient(180deg, #ffffff 0%, var(--clear-panel) 48%, var(--paper) 100%)
+      fixed;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Atkinson, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  color: var(--ink);
+  background: transparent;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 72px);
+  color: var(--charcoal);
+  background: rgb(255 255 255 / 0.78);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgb(119 168 247 / 0.24);
+  box-shadow: 0 10px 34px rgb(96 112 138 / 0.08);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+.brand-word {
+  color: var(--charcoal);
+  font-size: 1.02rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--paper);
+  background: linear-gradient(135deg, var(--clear-blue-highlight), var(--clipboard-sage));
+  color: var(--charcoal);
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px clamp(20px, 5vw, 72px);
+  color: var(--muted);
+  background: rgb(255 255 255 / 0.78);
+  border-top: 1px solid rgb(119 168 247 / 0.22);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--clipboard-teal);
+  border-bottom: 1px solid rgb(15 118 110 / 0.28);
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--clipboard-teal), #168c83);
+  box-shadow: 0 14px 28px rgb(15 118 110 / 0.18);
+}
+
+.button.secondary {
+  color: var(--charcoal);
+  background: rgb(255 255 255 / 0.72);
+  border: 1px solid rgb(119 168 247 / 0.34);
+}
+
+.reveal {
+  animation: reveal 680ms ease both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .site-nav a {
+    flex: 1;
+    text-align: center;
+  }
+}
