@@ -24,6 +24,7 @@ The site currently represents:
 | `src/data/tools.ts` | Product routes, status, descriptions, highlights, and proof copy. | tracked source |
 | `src/pages/index.astro` | Home page composition and high-level product messaging. | tracked source or modified tracked during active design work |
 | `src/pages/[code].astro` | Product page rendering. | tracked source or modified tracked during active design work |
+| `src/pages/checkout/success.astro` | Checkout completion copy after Creem redirects customers back to the site. | untracked source candidate until added |
 | `src/content/posts/*.mdx` | Blog articles. | tracked source or modified tracked during active editing |
 | `src/layouts/SiteLayout.astro` | Navigation, footer, favicon, baseline metadata. | tracked source or modified tracked during active design work |
 | `public/*` | Public images, icons, and fonts. | tracked or untracked until added |
@@ -36,6 +37,8 @@ The site currently represents:
 - Do not imply clipboard data is uploaded unless a future product contract explicitly says so.
 - Do not publish release/update/signing claims that have not been verified in the relevant product repository.
 - Keep route slugs stable unless redirects and navigation are reviewed.
+- Zen Clear Pro pricing is `$10/year` and subscription-only. Keep purchase copy,
+  checkout success copy, and Rustzen Cloud checkout assumptions aligned.
 
 ## Blog Rules
 
@@ -61,6 +64,11 @@ Before adding SEO features such as Open Graph images, canonical URLs, redirects,
 ## Media Rules
 
 - `public/` is for assets referenced by URL paths such as `/rustzen-macos-suite.png`.
+- Zen Clear product media is based on a real Tauri GUI window screenshot stored
+  at `public/products/zen-clear-gui-screenshot.png`, then composed into
+  `public/products/zen-clear-product.png` for site and Creem product-page use.
+  Keep it aligned with the current Zen Clear app rather than older
+  `Disk Cleaner Pro` concept screens.
 - `src/assets/` is for build-pipeline-owned assets imported by Astro content or components.
 - Screenshots used as docs evidence belong under `docs/screenshots/`.
 - New product media should be reviewed for route usage, alt text, file size, and whether it is tracked or still untracked.

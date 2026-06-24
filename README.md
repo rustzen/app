@@ -10,7 +10,8 @@ RustZen Site is the static official website for RustZen macOS tools.
 
 ## Tools
 
-- **Zen Clear**: a lightweight macOS cleaner for developer environments.
+- **Zen Clear**: a lightweight macOS cleaner for developer environments. Pro is
+  sold as a Creem annual subscription at $10/year.
 - **Clipboard**: a clipboard history app for macOS that keeps history on the Mac.
 
 ## Stack

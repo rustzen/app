@@ -8,6 +8,15 @@ export const tools = [
     href: '/zen-clear',
     status: 'Beta',
     accent: 'clear',
+    image: {
+      src: '/products/zen-clear-product.png',
+      alt: 'Zen Clear native macOS GUI screenshot showing available disk space and cache scan categories',
+    },
+    purchase: {
+      label: 'Subscribe Pro',
+      href: 'https://cloud.rustzen.dev/api/billing/checkout?product=rustzen-clear&source=site',
+      price: '$10/year',
+    },
     highlights: [
       'Native macOS window with source-list navigation, result tables, and an item inspector',
       'Scan developer cache and build output locations across package managers, IDEs, Docker, Xcode, and AI tools',
@@ -26,6 +35,8 @@ export const tools = [
     href: '/clipboard',
     status: 'In development',
     accent: 'clipboard',
+    image: null,
+    purchase: null,
     highlights: [
       'Native macOS history window with compact search, filters, row navigation, and a preview inspector',
       'Search recent, pinned, sensitive, text, code, image, file, and link entries',
