@@ -1,8 +1,8 @@
-# rustzen-site Architecture
+# app Architecture
 
 ## Classification
 
-`rustzen-site` is a RustZen peripheral website. It publishes brand, product, and blog content for RustZen macOS tools. It is not a Rust backend, Web admin dashboard, Tauri client, or release bundle project.
+`app` is the RustZen product site. It publishes brand, product, and blog content for RustZen macOS tools at `app.rustzen.dev`. It is not a Rust backend, Web admin dashboard, Tauri client, or release bundle project.
 
 ## Stack
 
@@ -31,7 +31,7 @@
 
 ## Routes
 
-- `/`: RustZen site home.
+- `/`: RustZen product site home.
 - `/zen-clear`: Zen Clear product page.
 - `/clipboard`: Clipboard product page.
 - `/checkout/success`: static return page after a completed Creem checkout.
@@ -67,10 +67,10 @@ collection during the Astro static build.
 
 Do not introduce Rust service deployment assumptions here:
 
-- no `/opt/rustzen-site`;
+- no `/opt/rustzen-app`;
 - no systemd unit;
 - no Docker release rule;
-- no `target/rustzen-site`;
+- no `target/rustzen-app`;
 - no `apps/server` or `apps/web` migration;
 - no Tauri updater/signing/capabilities rules.
 

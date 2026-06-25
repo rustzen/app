@@ -1,8 +1,8 @@
-# rustzen-site Content Governance
+# app Content Governance
 
 ## Purpose
 
-`rustzen-site` publishes RustZen brand, product, and engineering content for the public website.
+`app` publishes RustZen brand, product, and engineering content for the product site at `app.rustzen.dev`.
 
 The site currently represents:
 
@@ -13,7 +13,7 @@ The site currently represents:
 ## Naming
 
 - Use `RustZen` for the public brand, website copy, page titles, navigation labels, image alt text, and product ecosystem references.
-- Use lowercase `rustzen-*` for repository names, package names, route/file identifiers, command names, and literal URLs.
+- Use `rustzen/app` and `@rustzen/app` for repository/package identifiers; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
 - Historical articles may retain `Rustzen` when documenting the original naming in old prose. Prefer adding context over rewriting historical wording.
 - Product names are `Zen Clear` and `Clipboard`.
 
