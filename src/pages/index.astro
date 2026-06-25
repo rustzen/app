@@ -19,6 +19,24 @@ import { product } from '../data/product';
           </a>
           <span>{product.purchase.price}</span>
         </div>
+        <dl class="pro-details" aria-label="Zen Clear Pro pricing and limits">
+          <div>
+            <dt>Pro</dt>
+            <dd>{product.purchase.price}</dd>
+          </div>
+          <div>
+            <dt>Devices</dt>
+            <dd>{product.purchase.deviceLimit}</dd>
+          </div>
+          <div>
+            <dt>Free</dt>
+            <dd>{product.purchase.free}</dd>
+          </div>
+          <div>
+            <dt>Upgrade</dt>
+            <dd>{product.purchase.pro}</dd>
+          </div>
+        </dl>
       </div>
       <figure class="hero-media reveal">
         <img src={product.image.src} alt={product.image.alt} loading="eager" />
@@ -89,6 +107,38 @@ import { product } from '../data/product';
   .actions span {
     color: var(--muted);
     font-weight: 700;
+  }
+
+  .pro-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    max-width: 620px;
+    margin: 28px 0 0;
+    overflow: hidden;
+    border: 1px solid rgb(100 112 134 / 0.16);
+    border-radius: 8px;
+    background: rgb(100 112 134 / 0.16);
+  }
+
+  .pro-details div {
+    min-width: 0;
+    padding: 16px 18px;
+    background: rgb(255 255 255 / 0.74);
+  }
+
+  .pro-details dt {
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .pro-details dd {
+    margin: 6px 0 0;
+    color: var(--charcoal);
+    font-weight: 800;
   }
 
   .hero-media {
@@ -171,6 +221,12 @@ import { product } from '../data/product';
     .proof {
       align-items: flex-start;
       flex-direction: column;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pro-details {
+      grid-template-columns: 1fr;
     }
   }
 </style>

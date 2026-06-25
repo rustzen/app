@@ -13,6 +13,9 @@ export const product = {
     label: 'Subscribe Pro',
     href: 'https://cloud.rustzen.dev/api/billing/checkout?product=rustzen-clear&source=site',
     price: '$10/year',
+    deviceLimit: 'up to 3 devices',
+    free: 'Free scan & preview',
+    pro: 'Pro unlocks cleanup',
   },
   download: {
     label: 'Download for macOS',
