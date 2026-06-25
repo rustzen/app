@@ -4,7 +4,7 @@
 
 `app` is the RustZen product site. It is an Astro static/content site deployed to Vercel at `app.rustzen.dev`.
 
-Use this guide for work inside `/Users/daibin/Projects/repo-github/rustzen-site`. The GitHub repository is `rustzen/app`; the parent `/Users/daibin/Projects/repo-github/AGENTS.md` still applies for repository boundaries and dirty-tree protection.
+Use this guide for work inside `/Users/daibin/Projects/repo-github/app`. The GitHub repository is `rustzen/app`; the parent `/Users/daibin/Projects/repo-github/AGENTS.md` still applies for repository boundaries and dirty-tree protection.
 
 ## Project Type
 
@@ -20,7 +20,7 @@ Do not apply Rust service, Web admin, systemd, Docker, `/opt/rustzen-*`, Tauri, 
 
 - Public brand: `RustZen`.
 - Repository and package identifiers: `rustzen/app` and `@rustzen/app`.
-- Local checkout path: `/Users/daibin/Projects/repo-github/rustzen-site` until renamed separately.
+- Local checkout path: `/Users/daibin/Projects/repo-github/app`.
 - Route and historical content identifiers may still use lowercase `rustzen-*` when they describe product names, old prose, or local paths.
 - Historical article text may mention `Rustzen` or `rustzen-*` when referring to original project naming; do not rewrite old article prose unless the task is content migration.
 

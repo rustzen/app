@@ -9,15 +9,37 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
   <main class="checkout-success">
     <section>
       <p class="eyebrow">Checkout complete</p>
-      <h1>Open Zen Clear and activate Pro.</h1>
+      <h1>Activate Zen Clear Pro.</h1>
       <p>
-        Your annual Pro subscription is active. Use the license key from your Creem receipt in
-        Zen Clear Settings.
+        Zen Clear will open the authorization page. If Creem returned a license key, it will be
+        filled in automatically.
       </p>
-      <a class="button primary" href="/zen-clear">Back to Zen Clear</a>
+      <div class="actions">
+        <a id="open-zen-clear" class="button primary" href="zenclear://license">
+          Open Zen Clear
+        </a>
+        <a class="button secondary" href="/zen-clear">Back to product</a>
+      </div>
     </section>
   </main>
 </SiteLayout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const licenseKey = params.get("license_key") ?? params.get("key") ?? "";
+  const appUrl = new URL("zenclear://license");
+  if (licenseKey.trim()) {
+    appUrl.searchParams.set("key", licenseKey.trim());
+  }
+
+  const openZenClear = document.querySelector<HTMLAnchorElement>("#open-zen-clear");
+  if (openZenClear) {
+    openZenClear.href = appUrl.toString();
+    window.setTimeout(() => {
+      window.location.href = appUrl.toString();
+    }, 500);
+  }
+</script>
 
 <style>
   .checkout-success {
@@ -30,6 +52,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 
   .checkout-success section {
     max-width: 760px;
+    text-align: left;
   }
 
   .checkout-success h1 {
@@ -44,5 +67,17 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
     margin: 26px 0 30px;
     color: var(--muted);
     font-size: clamp(1.1rem, 2vw, 1.35rem);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .button.secondary {
+    background: #ffffff;
+    color: var(--charcoal);
+    border: 1px solid var(--line);
   }
 </style>

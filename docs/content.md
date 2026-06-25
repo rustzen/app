@@ -67,6 +67,9 @@ Before adding SEO features such as Open Graph images, canonical URLs, redirects,
 - Zen Clear product media is based on a real Tauri GUI window screenshot stored
   at `public/products/zen-clear-gui-screenshot.png`, then composed into
   `public/products/zen-clear-product.png` for site and Creem product-page use.
+  Use `public/products/zen-clear-creem-cover.png` for the Creem checkout media:
+  it is a checkout-specific cover with reduced whitespace, current GUI media,
+  and concise Pro purchase points.
   Keep it aligned with the current Zen Clear app rather than older
   `Disk Cleaner Pro` concept screens.
 - `src/assets/` is for build-pipeline-owned assets imported by Astro content or components.
