@@ -1,34 +1,51 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import { getLocale, pick, type Locale } from '../i18n';
+
+interface Props {
+  locale?: Locale;
+}
+const { locale = getLocale(Astro.url.pathname) } = Astro.props;
 ---
 
 <SiteLayout
-  title="Contact | RustZen"
-  description="Contact RustZen support for Zen Clear questions, billing, refunds, and license help."
+  title={pick(locale, 'Contact | RustZen', '联系我们 | RustZen')}
+  description={pick(
+    locale,
+    'Contact RustZen support for Zen Clear questions, billing, refunds, and license help.',
+    '联系 RustZen 支持：Zen Clear 相关问题、账单、退款与许可证帮助。',
+  )}
+  locale={locale}
 >
   <main class="legal-page">
     <article class="legal-document">
-      <p class="eyebrow">Contact</p>
-      <h1>Contact RustZen</h1>
+      <p class="eyebrow">{pick(locale, 'Contact', '联系我们')}</p>
+      <h1>{pick(locale, 'Contact RustZen', '联系 RustZen')}</h1>
       <p>
-        For Zen Clear support, billing questions, refund requests, license
-        activation issues, or privacy requests, email
+        {pick(
+          locale,
+          'For Zen Clear support, billing questions, refund requests, license activation issues, or privacy requests, email',
+          '如需 Zen Clear 支持、账单问题、退款申请、许可证激活问题或隐私请求，请邮件联系',
+        )}
         <a href="mailto:support@rustzen.dev">support@rustzen.dev</a>.
       </p>
 
-      <h2>What To Include</h2>
+      <h2>{pick(locale, 'What To Include', '请提供以下信息')}</h2>
       <p>
-        For license or billing requests, include the email used at checkout,
-        your Creem order or subscription reference if available, your app
-        version, and a short description of the issue.
+        {pick(
+          locale,
+          'For license or billing requests, include the email used at checkout, your Creem order or subscription reference if available, your app version, and a short description of the issue.',
+          '关于许可证或账单的请求，请附上结账时使用的邮箱、Creem 订单或订阅号（如有）、应用版本，以及问题的简要描述。',
+        )}
       </p>
 
-      <h2>Product</h2>
+      <h2>{pick(locale, 'Product', '产品')}</h2>
       <p>
-        Zen Clear is a native macOS cleanup app for developer, AI, container,
-        and system caches. Zen Clear Pro is the annual $10/year paid
-        subscription for cleanup and license-backed features on up to three
-        devices. Scan and preview are available before cleanup.
+        {pick(
+          locale,
+          'Zen Clear is a native macOS cleanup app for developer, AI, container, and system caches. Zen Clear Pro is the annual $10/year paid subscription for cleanup and license-backed features on up to three devices. Scan and preview are available before cleanup.',
+          'Zen Clear 是一款原生 macOS 清理应用，面向开发者、AI、容器与系统缓存。Zen Clear Pro 为 10 美元/年的付费订阅，提供清理与许可证相关功能，最多支持三台设备。清理前可先扫描与预览。',
+        )}
       </p>
     </article>
   </main>
