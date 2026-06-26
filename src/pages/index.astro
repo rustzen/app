@@ -183,16 +183,6 @@ const meta = [
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final">
-      <div class="final-inner glass">
-        <h2>{pick(locale, product.finalTitle, product.finalTitleZh)}</h2>
-        <p>{pick(locale, product.finalBody, product.finalBodyZh)}</p>
-        <Button variant="primary" href={product.download.href}>
-          {pick(locale, product.download.label, product.download.labelZh)}
-        </Button>
-      </div>
-    </section>
   </main>
 </SiteLayout>
 
@@ -586,48 +576,6 @@ const meta = [
   .faq-item p {
     margin: 0 0 18px;
     color: var(--ink-2);
-  }
-
-  .final {
-    padding: clamp(40px, 7vw, 88px) clamp(20px, 5vw, 72px);
-  }
-
-  .final-inner {
-    position: relative;
-    overflow: hidden;
-    padding: clamp(40px, 6vw, 72px);
-    text-align: center;
-    border-radius: var(--radius-xl);
-  }
-
-  .final-inner::before {
-    content: '';
-    position: absolute;
-    inset: -40% 20% auto 20%;
-    height: 160%;
-    background: radial-gradient(circle at 50% 0%, var(--ambient-a), transparent 60%);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .final-inner h2 {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.04;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .final-inner p {
-    max-width: 540px;
-    margin: 16px auto 28px;
-    color: var(--ink-2);
-    font-size: 1.08rem;
-  }
-
-  .final-inner :global(.button) {
-    margin: 0 auto;
   }
 
   @media (max-width: 900px) {
