@@ -1,6 +1,6 @@
-# RustZen Site
+# Rustzen Site
 
-RustZen Site is the static official website for the RustZen macOS tool Zen Clear.
+Rustzen Site is the static official website for the Rustzen macOS tool Zen Clear.
 
 ## Scope
 
@@ -12,7 +12,7 @@ RustZen Site is the static official website for the RustZen macOS tool Zen Clear
 
 - **Zen Clear**: a lightweight macOS cleaner for developer environments. Pro is
   sold as a Creem annual subscription at $10/year.
-- The public download button points at RustZen Cloud's stable latest download
+- The public download button points at Rustzen Cloud's stable latest download
   resolver.
 
 ## Stack

@@ -2,13 +2,13 @@
 
 ## Scope
 
-`app` is the RustZen product site. It is an Astro static/content site deployed to Vercel at `app.rustzen.dev`.
+`app` is the Rustzen product site. It is an Astro static/content site deployed to Vercel at `app.rustzen.dev`.
 
 Use this guide for work inside `/Users/daibin/Projects/repo-github/app`. The GitHub repository is `rustzen/app`; the parent `/Users/daibin/Projects/repo-github/AGENTS.md` still applies for repository boundaries and dirty-tree protection.
 
 ## Project Type
 
-- Type: RustZen product site / Vercel / Astro static site.
+- Type: Rustzen product site / Vercel / Astro static site.
 - Source framework: Astro.
 - Source truth: tracked files in this repository.
 - Static output: `dist/`.
@@ -18,7 +18,7 @@ Do not apply Rust service, Web admin, systemd, Docker, `/opt/rustzen-*`, Tauri, 
 
 ## Naming
 
-- Public brand: `RustZen`.
+- Public brand: `Rustzen`.
 - Repository and package identifiers: `rustzen/app` and `@rustzen/app`.
 - Local checkout path: `/Users/daibin/Projects/repo-github/app`.
 - Route and historical content identifiers may still use lowercase `rustzen-*` when they describe product names, old prose, or local paths.
@@ -57,7 +57,7 @@ Vercel config currently specifies:
 
 ## Review Notes
 
-For RustZen standardization work, keep changes docs/governance-first unless the user explicitly asks for content or UI implementation.
+For Rustzen standardization work, keep changes docs/governance-first unless the user explicitly asks for content or UI implementation.
 
 When changing content, SEO, product claims, routes, images, or Vercel deployment settings, include evidence for:
 

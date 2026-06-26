@@ -6,11 +6,11 @@ Date captured: 2026-06-10.
 
 ## Home
 
-Title: RustZen macOS apps
+Title: Rustzen macOS apps
 
 Headline: macOS cleanup and clipboard history.
 
-Description: RustZen builds macOS tools for developer cache cleanup and local clipboard history.
+Description: Rustzen builds macOS tools for developer cache cleanup and local clipboard history.
 
 Primary products:
 
@@ -47,4 +47,4 @@ Features:
 - Search recent and pinned entries
 - Delete sensitive or temporary entries
 
-Note: Clipboard history stays on the Mac. RustZen Cloud is not used for clipboard contents or clipboard history.
+Note: Clipboard history stays on the Mac. Rustzen Cloud is not used for clipboard contents or clipboard history.

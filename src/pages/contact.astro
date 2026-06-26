@@ -9,18 +9,18 @@ const { locale = getLocale(Astro.url.pathname) } = Astro.props;
 ---
 
 <SiteLayout
-  title={pick(locale, 'Contact | RustZen', '联系我们 | RustZen')}
+  title={pick(locale, 'Contact | Rustzen', '联系我们 | Rustzen')}
   description={pick(
     locale,
-    'Contact RustZen support for Zen Clear questions, billing, refunds, and license help.',
-    '联系 RustZen 支持：Zen Clear 相关问题、账单、退款与许可证帮助。',
+    'Contact Rustzen support for Zen Clear questions, billing, refunds, and license help.',
+    '联系 Rustzen 支持：Zen Clear 相关问题、账单、退款与许可证帮助。',
   )}
   locale={locale}
 >
   <main class="legal-page">
     <article class="legal-document">
       <p class="eyebrow">{pick(locale, 'Contact', '联系我们')}</p>
-      <h1>{pick(locale, 'Contact RustZen', '联系 RustZen')}</h1>
+      <h1>{pick(locale, 'Contact Rustzen', '联系 Rustzen')}</h1>
       <p>
         {pick(
           locale,

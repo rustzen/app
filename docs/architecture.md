@@ -2,7 +2,7 @@
 
 ## Classification
 
-`app` is the RustZen product site. It publishes the Zen Clear product page and Creem checkout return at `app.rustzen.dev`. It is not a Rust backend, Web admin dashboard, Tauri client, or release bundle project.
+`app` is the Rustzen product site. It publishes the Zen Clear product page and Creem checkout return at `app.rustzen.dev`. It is not a Rust backend, Web admin dashboard, Tauri client, or release bundle project.
 
 ## Stack
 
