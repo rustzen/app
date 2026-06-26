@@ -14,8 +14,8 @@ const { locale = getLocale(Astro.url.pathname) } = Astro.props;
   title={pick(locale, 'Pricing — Zen Clear | RustZen', '价格 — Zen Clear | RustZen')}
   description={pick(
     locale,
-    'Zen Clear is free to scan and preview. Pro is $10/year for one-click cleanup, Restore Center, and up to 3 devices.',
-    'Zen Clear 扫描与预览永久免费。Pro 为 10 美元/年，含一键清理、恢复中心，最多 3 台设备。',
+    'Zen Clear is free to scan, preview, grant macOS permissions, and receive updates. Pro is $10/year for cleanup, Restore Center, development scan settings, and up to 3 devices.',
+    'Zen Clear 扫描、预览、macOS 权限设置与更新永久免费。Pro 为 10 美元/年，含清理、恢复中心、开发扫描设置，最多 3 台设备。',
   )}
   active="Pricing"
   locale={locale}
@@ -24,7 +24,7 @@ const { locale = getLocale(Astro.url.pathname) } = Astro.props;
     <header class="page-head">
       <p class="eyebrow">{pick(locale, 'Pricing', '价格')}</p>
       <h1>{pick(locale, product.pricingTitle, product.pricingTitleZh)}</h1>
-      <p class="sub">{pick(locale, 'Free to scan and preview forever. Pro unlocks cleanup across your machines.', '永久免费扫描与预览；Pro 解锁跨设备的清理能力。')}</p>
+      <p class="sub">{pick(locale, 'Free to scan, preview, manage permissions, and update forever. Pro unlocks cleanup and development scan settings across your machines.', '永久免费扫描、预览、管理权限和更新；Pro 解锁跨设备清理与开发扫描设置。')}</p>
     </header>
 
     <div class="plans">

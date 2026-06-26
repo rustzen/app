@@ -36,6 +36,11 @@ The site currently represents:
   not a hard-coded release package URL.
 - Zen Clear Pro pricing is `$10/year` and subscription-only. Keep purchase copy,
   checkout success copy, and Rustzen Cloud checkout assumptions aligned.
+- Current public feature boundary: scanning, cleanup preview, macOS permission
+  setup, automatic update checks, and manual update checks do not require a
+  license. Pro unlocks cleanup, Restore Center, development scan settings
+  (scan folders and exclusions), custom rules, scheduled scans, and up to three
+  activated devices.
 
 ## SEO And Metadata
 
