@@ -1,4 +1,4 @@
-# RustZen Design System — Zen Blue Glass
+# Rustzen Design System — Zen Blue Glass
 
 > Canonical brand & UI spec. This document is the single source of truth shared by
 > the **app** marketing site (Astro) and the **cloud** admin dashboard (Next.js).
@@ -155,7 +155,7 @@ duplicate set for end-of-page convenience.
 Header layout (desktop):
 
 ```
-[◆ RustZen]   Features  Pricing  Changelog  Help  Policies▾   [中/EN] [☀/🌙] [⬇ Download]
+[◆ Rustzen]   Features  Pricing  Changelog  Help  Policies▾   [中/EN] [☀/🌙] [⬇ Download]
                                                        └ Privacy
                                                          Terms
                                                          Refund

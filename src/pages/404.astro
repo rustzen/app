@@ -9,7 +9,7 @@ interface Props {
 const { locale = getLocale(Astro.url.pathname) } = Astro.props;
 ---
 
-<SiteLayout title={pick(locale, 'Page not found | RustZen', '页面未找到 | RustZen')} description={pick(locale, 'The page you were looking for could not be found.', '您访问的页面不存在。')} locale={locale}>
+<SiteLayout title={pick(locale, 'Page not found | Rustzen', '页面未找到 | Rustzen')} description={pick(locale, 'The page you were looking for could not be found.', '您访问的页面不存在。')} locale={locale}>
   <main class="not-found">
     <section class="glass inner">
       <p class="code">404</p>

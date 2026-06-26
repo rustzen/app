@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`app` publishes the RustZen brand and Zen Clear product content for the product site at `app.rustzen.dev`.
+`app` publishes the Rustzen brand and Zen Clear product content for the product site at `app.rustzen.dev`.
 
 The site currently represents:
 
@@ -10,7 +10,7 @@ The site currently represents:
 
 ## Naming
 
-- Use `RustZen` for the public brand, website copy, page titles, navigation labels, image alt text, and product ecosystem references.
+- Use `Rustzen` for the public brand, website copy, page titles, navigation labels, image alt text, and product ecosystem references.
 - Use `rustzen/app` and `@rustzen/app` for repository/package identifiers; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
 - Historical snapshots may retain `Rustzen` when documenting the original naming in old prose. Prefer adding context over rewriting historical wording.
 - The product is `Zen Clear`.
