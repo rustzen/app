@@ -36,7 +36,8 @@ export const product = {
     'Native macOS window with source-list navigation, result tables, and an item inspector',
     'Scan developer cache and build output locations across package managers, IDEs, Docker, Xcode, and AI tools',
     'Risk-grade every finding as Safe, Review, or High risk before cleanup',
-    'Preview cleanup scope, keep actions explicit, and route recoverable changes through Restore Center',
+    'Preview cleanup scope, keep actions explicit, and manage recoverable changes in Restore Center',
+    'Surface Restore Center storage in disk analysis so retained cleanup items stay visible',
   ],
   // Feature grid (2x2) — bilingual.
   features: [
@@ -65,8 +66,8 @@ export const product = {
       icon: 'restore',
       title: 'Restore Center',
       titleZh: '恢复中心',
-      body: 'Preview scope, keep actions explicit, and roll recoverable changes back anytime.',
-      bodyZh: '预览清理范围、显式确认，并可随时回滚可恢复的变更。',
+      body: 'Review recoverable items, restore them, or permanently delete selected entries when you are ready.',
+      bodyZh: '查看可恢复项目，按需恢复，也可以在确认后永久删除所选条目。',
     },
   ],
   // Safety showcase — the brand centerpiece.
@@ -126,10 +127,10 @@ export const product = {
     },
     {
       n: '03',
-      title: 'Preview, confirm, restore anytime',
-      titleZh: '预览、确认、随时恢复',
-      body: 'See exactly what will be cleaned before anything runs, and roll back through Restore Center.',
-      bodyZh: '在任何清理发生前看清范围，并可通过恢复中心随时回滚。',
+      title: 'Preview, confirm, restore or delete',
+      titleZh: '预览、确认、恢复或删除',
+      body: 'See exactly what will be cleaned before anything runs, then restore or permanently remove retained items in Restore Center.',
+      bodyZh: '在任何清理发生前看清范围，再到恢复中心恢复或永久移除保留项目。',
     },
   ],
   // Pricing teaser — Free vs Pro.
@@ -172,7 +173,7 @@ export const product = {
       features: [
         'Everything in Free',
         'One-click cleanup',
-        'Restore Center',
+        'Restore Center with manual delete',
         'Development scan settings',
         'Custom rules and scheduled scans',
         'Up to 3 devices',
@@ -181,7 +182,7 @@ export const product = {
       featuresZh: [
         '包含免费版全部',
         '一键清理',
-        '恢复中心',
+        '恢复中心与手动删除',
         '开发扫描设置',
         '自定义规则与定时扫描',
         '最多 3 台设备',
@@ -200,14 +201,20 @@ export const product = {
     {
       q: 'Is Zen Clear safe? Will it delete something important?',
       qZh: 'Zen Clear 安全吗？会删掉重要数据吗？',
-      a: 'Cleanup is preview-first. Nothing is deleted until you confirm, and every item is risk-graded. Recoverable changes route through Restore Center, so you can roll back.',
-      aZh: '清理是预览优先的：在你确认之前不会删除任何内容，且每项数据都有风险分级。可恢复的变更会进入恢复中心，可随时回滚。',
+      a: 'Cleanup is preview-first. Nothing is removed until you confirm, and every item is risk-graded. Recoverable changes route through Restore Center, where you can restore them or permanently delete selected entries.',
+      aZh: '清理是预览优先的：在你确认之前不会移除任何内容，且每项数据都有风险分级。可恢复的变更会进入恢复中心，你可以恢复，也可以永久删除所选条目。',
     },
     {
       q: 'Which macOS versions are supported?',
       qZh: '支持哪些 macOS 版本？',
       a: 'Zen Clear runs on macOS 13 Ventura and later, as a Universal binary (Apple silicon + Intel).',
       aZh: 'Zen Clear 支持 macOS 13 Ventura 及更高版本，提供通用二进制（Apple 芯片 + Intel）。',
+    },
+    {
+      q: 'Will Restore Center keep growing?',
+      qZh: '恢复中心会一直变大吗？',
+      a: 'Restore Center keeps recoverable cleanup items until you restore or permanently delete them. Zen Clear surfaces Restore Center storage in disk analysis so retained items are visible.',
+      aZh: '恢复中心会保留可恢复清理项目，直到你恢复或永久删除。Zen Clear 会在磁盘分析中显示恢复中心占用，让保留项目保持可见。',
     },
     {
       q: 'What does the scan cover?',
