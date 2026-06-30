@@ -11,7 +11,7 @@ The site currently represents:
 ## Naming
 
 - Use `Rustzen` for the public brand, website copy, page titles, navigation labels, image alt text, and product ecosystem references.
-- Use `rustzen/app` and `@rustzen/app` for repository/package identifiers; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
+- Use `rustzen/rzen-portal` for the GitHub repository identifier and `@rustzen/app` for the package identifier; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
 - Historical snapshots may retain `Rustzen` when documenting the original naming in old prose. Prefer adding context over rewriting historical wording.
 - The product is `Zen Clear`.
 
