@@ -1,6 +1,6 @@
-# app Docs
+# rzen-portal Docs
 
-`app` is the Rustzen product site at `app.rustzen.dev`. It is an Astro static site with Vercel deployment configuration.
+`rzen-portal` is the Rustzen product site at `app.rustzen.dev`. It is an Astro static site with Vercel deployment configuration.
 
 ## Docs
 

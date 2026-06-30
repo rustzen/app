@@ -1,7 +1,7 @@
 # Rustzen Design System — Zen Blue Glass
 
 > Canonical brand & UI spec. This document is the single source of truth shared by
-> the **app** marketing site (Astro) and the **cloud** admin dashboard (Next.js).
+> the **rzen-portal** marketing site (Astro) and the **rzen-platform** admin dashboard (Next.js).
 > The product desktop app (`rustzen-clear/zen-gui`) already implements this language;
 > the website and dashboard are being aligned to it.
 >
@@ -19,7 +19,7 @@ Two rules govern every decision below:
 
 1. **One token contract, three implementations.** Colors, type, radius, motion,
    glass and safety semantics are defined once here and copied verbatim into
-   `app/src/styles/global.css` and `cloud/src/app/globals.css`.
+   `rzen-portal/src/styles/global.css` and `rzen-platform/src/app/globals.css`.
 2. **Brand color has two strengths.** `#77a8f7` (brand-400) is soft — great for
    glass, gradients, ambient glow and icons. It fails contrast as a primary button
    or body text on white, so those use the deeper `#3f7fd9` (brand-600). Never use
@@ -236,11 +236,11 @@ uses `--ambient-a`/`--ambient-b` behind the frame.
 
 | Phase | Scope | Repo | Status |
 |---|---|---|---|
-| P0 | Token foundation in both globals; header+hero restyle sample (app); shell+overview restyle sample (cloud) | app, cloud | ✅ Done |
-| P1 | Component extraction; full homepage rebuild; Nav with Policies dropdown + i18n + theme | app | ✅ Done |
-| P2 | New pages (pricing, changelog, help, 404); SEO suite; image optimization | app | ✅ Done |
-| P3 | Dashboard token pass + component restyle | cloud | ✅ Done |
-| P4 | DataTable (search/sort/page), skeleton/empty/toast/confirm, dark mode, sparkline | cloud | ✅ Done |
+| P0 | Token foundation in both globals; header+hero restyle sample (rzen-portal); shell+overview restyle sample (rzen-platform) | rzen-portal, rzen-platform | ✅ Done |
+| P1 | Component extraction; full homepage rebuild; Nav with Policies dropdown + i18n + theme | rzen-portal | ✅ Done |
+| P2 | New pages (pricing, changelog, help, 404); SEO suite; image optimization | rzen-portal | ✅ Done |
+| P3 | Dashboard token pass + component restyle | rzen-platform | ✅ Done |
+| P4 | DataTable (search/sort/page), skeleton/empty/toast/confirm, dark mode, sparkline | rzen-platform | ✅ Done |
 
 All phases shipped. Remaining polish (not blocking): path-based `/zh` route
 mirroring (current i18n is robust client-side with `html lang` seeded pre-paint);

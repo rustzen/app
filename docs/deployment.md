@@ -1,8 +1,8 @@
-# app Deployment
+# rzen-portal Deployment
 
 ## Current Deployment Class
 
-`app` is a Vercel static product site deployed for `app.rustzen.dev`. Deployment is governed by `vercel.json` and the Astro build output, not by Rust service deployment conventions.
+`rzen-portal` is a Vercel static product site deployed for `app.rustzen.dev`. Deployment is governed by `vercel.json` and the Astro build output, not by Rust service deployment conventions.
 
 ## Committed Vercel Configuration
 

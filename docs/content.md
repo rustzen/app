@@ -1,8 +1,8 @@
-# app Content Governance
+# rzen-portal Content Governance
 
 ## Purpose
 
-`app` publishes the Rustzen brand and Zen Clear product content for the product site at `app.rustzen.dev`.
+`rzen-portal` publishes the Rustzen brand and Zen Clear product content for the product site at `app.rustzen.dev`.
 
 The site currently represents:
 
