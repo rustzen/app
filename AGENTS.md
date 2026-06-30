@@ -20,7 +20,7 @@ Do not apply Rust service, Web admin, systemd, Docker, `/opt/rustzen-*`, Tauri, 
 
 - Public brand: `Rustzen`.
 - Repository identifier: `rustzen/rzen-portal`.
-- Package identifier: `@rustzen/app`.
+- Package identifier: `@rustzen/rzen-portal`.
 - Local checkout path: `/Users/daibin/Projects/repo-github/rzen-portal`.
 - Route and historical content identifiers may still use lowercase `rustzen-*` when they describe product names, old prose, or local paths.
 - Historical article text may mention `Rustzen` or `rustzen-*` when referring to original project naming; do not rewrite old article prose unless the task is content migration.

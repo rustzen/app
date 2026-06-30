@@ -51,4 +51,4 @@ Features:
 - Search recent and pinned entries
 - Delete sensitive or temporary entries
 
-Note: Clipboard history stays on the Mac. Rustzen Cloud is not used for clipboard contents or clipboard history.
+Note: Clipboard history stays on the Mac. Rustzen Platform is not used for clipboard contents or clipboard history.

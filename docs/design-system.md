@@ -130,7 +130,7 @@ The product is light-only today; the website and dashboard add dark mode via a
 /features             Feature detail (anchor sections)
 /pricing              Pro $10/yr — detail, comparison, FAQ
 /download             macOS download — requirements, current version, checksum
-/changelog            Release notes (mirrors cloud versions)
+/changelog            Release notes (mirrors platform versions)
 /help                 Quick start + FAQ
 /contact              Support
 /privacy /terms /refund   Legal (kept; restyled)   ← also surfaced in header, see §3
@@ -244,4 +244,4 @@ uses `--ambient-a`/`--ambient-b` behind the frame.
 
 All phases shipped. Remaining polish (not blocking): path-based `/zh` route
 mirroring (current i18n is robust client-side with `html lang` seeded pre-paint);
-wire `/changelog` to the live cloud `/api/versions` endpoint.
+wire `/changelog` to the live platform `/api/versions` endpoint.

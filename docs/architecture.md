@@ -28,10 +28,10 @@
 
 Zen Clear purchase copy is owned by `src/data/product.ts`. The current public
 offer is Pro as an annual Creem subscription at `$10/year`, linking through
-`cloud` at `/api/billing/checkout?product=rustzen-clear&source=site`.
+`rzen-platform` at `/api/billing/checkout?product=rustzen-clear&source=site`.
 
 Zen Clear download copy is also owned by `src/data/product.ts`. The public
-download button links through `cloud` at `/api/updates/download/latest`, which
+download button links through `rzen-platform` at `/api/updates/download/latest`, which
 resolves the current package from the update manifest instead of hard-coding a
 specific release version.
 
@@ -43,10 +43,10 @@ build.
 
 Do not introduce Rust service deployment assumptions here:
 
-- no `/opt/rustzen-app`;
+- no `/opt/rzen-portal`;
 - no systemd unit;
 - no Docker release rule;
-- no `target/rustzen-app`;
+- no `target/rzen-portal`;
 - no `apps/server` or `apps/web` migration;
 - no Tauri updater/signing/capabilities rules.
 

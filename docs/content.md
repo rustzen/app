@@ -11,7 +11,7 @@ The site currently represents:
 ## Naming
 
 - Use `Rustzen` for the public brand, website copy, page titles, navigation labels, image alt text, and product ecosystem references.
-- Use `rustzen/rzen-portal` for the GitHub repository identifier and `@rustzen/app` for the package identifier; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
+- Use `rustzen/rzen-portal` for the GitHub repository identifier and `@rustzen/rzen-portal` for the package identifier; use lowercase `rustzen-*` only for product names, route/file identifiers, command names, historical prose, and literal URLs.
 - Historical snapshots may retain `Rustzen` when documenting the original naming in old prose. Prefer adding context over rewriting historical wording.
 - The product is `Zen Clear`.
 
@@ -29,13 +29,13 @@ The site currently represents:
 ## Product Copy Rules
 
 - Keep product claims tied to current product state.
-- Do not describe cloud services as local runtime dependencies for Zen Clear.
+- Do not describe platform services as local runtime dependencies for Zen Clear.
 - Do not publish release/update/signing claims that have not been verified in the relevant product repository.
 - Keep route slugs stable unless redirects and navigation are reviewed.
-- Keep the public download button pointed at the Cloud latest download resolver,
+- Keep the public download button pointed at the Platform latest download resolver,
   not a hard-coded release package URL.
 - Zen Clear Pro pricing is `$10/year` and subscription-only. Keep purchase copy,
-  checkout success copy, and Rustzen Cloud checkout assumptions aligned.
+  checkout success copy, and Rustzen Platform checkout assumptions aligned.
 - Current public feature boundary: scanning, cleanup preview, macOS permission
   setup, automatic update checks, and manual update checks do not require a
   license. Pro unlocks cleanup, Restore Center, advanced scan rules,

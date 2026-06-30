@@ -1,5 +1,5 @@
 {
-  "name": "@rustzen/app",
+  "name": "@rustzen/rzen-portal",
   "version": "0.1.0",
   "private": true,
   "type": "module",
